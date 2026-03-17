@@ -1,0 +1,48 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #fafafa;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+  background: white;
+  transition: border-color var(--transition);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+}
+
+.textarea {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  outline: none;
+  background: white;
+  resize: vertical;
+  min-height: 60px;
+  transition: border-color var(--transition);
+}
+
+.textarea:focus {
+  border-color: var(--color-primary);
+}

@@ -1,0 +1,6 @@
+.indicator {
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text-light);
+  margin-bottom: 24px;
+}

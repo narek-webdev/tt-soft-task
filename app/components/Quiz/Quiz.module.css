@@ -1,0 +1,20 @@
+.wrapper {
+  background: var(--color-bg);
+  min-height: calc(100vh - 70px);
+  padding: 40px 20px;
+}
+
+.noQuiz {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.noQuiz h2 {
+  font-size: 20px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.noQuiz p {
+  color: #ddd;
+}

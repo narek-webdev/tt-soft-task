@@ -1,0 +1,126 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.createSection {
+  text-align: center;
+  padding: 60px 20px;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.createSection h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.createSection p {
+  color: var(--color-text-light);
+  margin-bottom: 20px;
+}
+
+.createForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input {
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+}
+
+.btnPrimary {
+  padding: 10px 20px;
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background var(--transition);
+}
+
+.btnPrimary:hover {
+  background: #222;
+}
+
+.btnDanger {
+  padding: 8px 16px;
+  background: var(--color-danger);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.btnDanger:hover {
+  background: #c0392b;
+}
+
+.questionsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.questionsHeader h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.addBtnGroup {
+  display: flex;
+  gap: 8px;
+}
+
+.btnSecondary {
+  padding: 8px 14px;
+  background: white;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.btnSecondary:hover {
+  border-color: var(--color-primary);
+  background: #f8f8f8;
+}
+
+.emptyQuestions {
+  text-align: center;
+  padding: 40px;
+  color: var(--color-text-light);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}

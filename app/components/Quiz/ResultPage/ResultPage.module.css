@@ -1,0 +1,99 @@
+.card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 50px 40px;
+  text-align: center;
+}
+
+.resultTitle {
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.resultHighlight {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background: var(--color-accent);
+  margin: 16px auto;
+}
+
+.resultDescription {
+  font-size: 14px;
+  color: var(--color-text-light);
+  max-width: 550px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.productsHeading {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: left;
+}
+
+.noProducts {
+  color: var(--color-text-light);
+  font-size: 14px;
+  padding: 20px;
+}
+
+.restartBtn {
+  margin-top: 32px;
+  padding: 12px 32px;
+  background: var(--color-primary);
+  color: var(--color-primary-text);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  transition: background var(--transition);
+}
+
+.restartBtn:hover {
+  background: #222;
+}
+
+.loading {
+  color: var(--color-text-light);
+  padding: 40px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .card {
+    padding: 40px 20px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: none;
+  }
+}

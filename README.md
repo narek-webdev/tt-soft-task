@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Quiz Builder
+
+A quiz builder and quiz taker application built with Next.js, React, and TypeScript. Create custom quizzes with multiple question types, drag-and-drop reordering, and product recommendations based on user answers.
+
+## Features
+
+- **Quiz Builder (Dashboard)** — Create quizzes with a title, description, and multiple questions
+- **Question Types** — Radio (single choice), checkbox (multiple choice), and text input
+- **Drag & Drop** — Reorder questions and answer choices via drag-and-drop
+- **Product Recommendations** — Attach products to choices; top products are recommended based on answers
+- **Quiz Taker** — Step-by-step quiz flow with progress indicator, navigation, and a results page
+- **Persistent Storage** — Quizzes are saved to localStorage (no backend required)
+
+## Tech Stack
+
+| Layer       | Technology                  |
+| ----------- | --------------------------- |
+| Framework   | Next.js 16                  |
+| Language    | TypeScript 5                |
+| UI          | React 19                    |
+| Styling     | CSS Modules                 |
+| Drag & Drop | @hello-pangea/dnd           |
+| Linting     | ESLint 9 + Next.js config   |
+| Deployment  | GitHub Pages (static export)|
+
+## Requirements
+
+- **Node.js** >= 20
+- **npm** (comes with Node.js)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Lint the code
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+```
 
-## Learn More
+## Build
 
-To learn more about Next.js, take a look at the following resources:
+Generate a static production build in the `out/` directory:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The project is configured with `output: "export"` in `next.config.ts`, so the build produces a fully static site that can be served from any static file host.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project deploys automatically to **GitHub Pages** via GitHub Actions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### How it works
+
+1. Push to the `master` branch (or trigger manually via workflow dispatch)
+2. The CI workflow installs dependencies, builds the static export, and uploads the `out/` directory
+3. The artifact is deployed to GitHub Pages
+
+### Manual deployment
+
+If you want to deploy manually:
+
+```bash
+npm run build
+# then serve or upload the `out/` directory to any static hosting provider
+```
+
+> **Note:** The app is configured with `basePath: "/tt-soft-task"` and `assetPrefix: "/tt-soft-task/"` in `next.config.ts`. Update these values if deploying to a different path.
+
+## Project Structure
+
+```
+app/
+├── components/
+│   ├── Dashboard/      # Quiz builder UI (QuizForm, QuestionEditor, ChoiceEditor, ProductPicker)
+│   ├── Quiz/           # Quiz taker UI (WelcomePage, QuestionPage, ResultPage, ProductCard)
+│   └── Navigation/     # Tab switcher between Dashboard and Quiz
+├── hooks/              # Custom React hooks (useQuiz, useQuizSession, useLocalStorage, useProducts)
+├── types/              # TypeScript interfaces (Quiz, Question, Choice, Answer)
+├── utils/              # Helpers (localStorage wrapper, recommendation algorithm)
+├── globals.css         # Global styles and CSS variables
+├── layout.tsx          # Root layout
+└── page.tsx            # Entry point
+```
+
+## License
+
+This project is private and not licensed for redistribution.

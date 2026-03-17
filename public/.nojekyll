@@ -1,0 +1,14 @@
+touch public/.nojekyll
+```
+
+This prevents GitHub Pages from ignoring your `_next` folder.
+
+---
+
+## Step 3 — Create the GitHub Actions workflow
+
+Create this folder structure in your project:
+```
+.github/
+  workflows/
+    deploy.yml
